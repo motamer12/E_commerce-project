@@ -1,0 +1,55 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+build/
+
+# dotenv environment variables
+.env
+.env.test
+
+# Optional cache and output
+.npm
+.cache
+.eslintcache
+.typings/
+*.tgz
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System files
+.DS_Store
+
+# Optional REPL history
+.node_repl_history
+
+# Local development files
+*.local
