@@ -24,7 +24,7 @@ This is a **backend eCommerce platform** built using **Node.js**, **Express**, a
 - **Middleware**: bcryptjs (for password hashing), dotenv (for environment variables)
 - **Testing**: Jest (for unit and integration tests)
 - **API**: RESTful APIs
-- **Payment**: Stripe or PayPal (depending on your setup)
+- **Payment**: Stripe 
 
 ## Installation
 
@@ -54,11 +54,10 @@ Before starting, make sure you have the following installed:
 3. Set up environment variables by creating a `.env` file in the root directory:
 
    ```env
-   PORT=5000
+   PORT=3000
    MONGO_URI=mongodb://localhost:27017/ecommerce
    JWT_SECRET=your_jwt_secret_key
    STRIPE_SECRET_KEY=your_stripe_secret_key (if using Stripe)
-   PAYPAL_CLIENT_ID=your_paypal_client_id (if using PayPal)
    ```
 
 4. Run the development server:
@@ -67,52 +66,8 @@ Before starting, make sure you have the following installed:
    npm start
    ```
 
-   The server will now be running on `http://localhost:5000`.
+   The server will now be running on `http://localhost:3000`.
 
-## API Endpoints
-
-### User Authentication
-
-- **POST** `/api/auth/register`: Register a new user
-- **POST** `/api/auth/login`: Log in a user
-- **GET** `/api/auth/profile`: Get the authenticated user's profile (requires JWT)
-
-### Products
-
-- **GET** `/api/products`: List all products
-- **GET** `/api/products/:id`: Get a single product by ID
-- **POST** `/api/products`: Add a new product (Admin only)
-- **PUT** `/api/products/:id`: Update a product (Admin only)
-- **DELETE** `/api/products/:id`: Delete a product (Admin only)
-
-### Orders
-
-- **POST** `/api/orders`: Create a new order
-- **GET** `/api/orders/:id`: Get an order by ID
-- **GET** `/api/orders`: Get all orders (Admin only)
-
-### Shopping Cart
-
-- **POST** `/api/cart`: Add a product to the cart
-- **GET** `/api/cart`: Get the current user's shopping cart
-- **DELETE** `/api/cart/:productId`: Remove a product from the cart
-
-### Admin Routes (requires Admin Role)
-
-- **GET** `/api/admin/users`: List all users
-- **GET** `/api/admin/orders`: View all orders
-- **POST** `/api/admin/products`: Add a product (Admin only)
-- **PUT** `/api/admin/products/:id`: Edit a product (Admin only)
-
-## Testing
-
-To run tests, use the following command:
-
-```bash
-npm test
-```
-
-This will run the unit and integration tests for the project.
 
 ## Deployment
 
@@ -166,6 +121,3 @@ You can deploy this project on **Heroku**, **AWS**, or any other cloud provider.
 4. Push to the branch (`git push origin feature-name`).
 5. Create a new Pull Request.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
