@@ -42,7 +42,7 @@ const createCashOrder =asyncErrorHandler(async(req,res,next)=>{
 })
 
 const checkoutOrder =asyncErrorHandler(async(req,res,next)=>{
-    let cart =await Cart.findById(req.params.id)
+    let cart =await Order.findById(req.params.id)
     if(!cart){
         const error = AppError.create('Cart not found', 400, HttpStatusText.FAIL);
         return next(error);
@@ -69,7 +69,7 @@ const checkoutOrder =asyncErrorHandler(async(req,res,next)=>{
         client_reference_id: req.params.id,
 })
 
-await Cart.findByIdAndDelete(cart._id)
+
 
 return res.status(201).json({status: HttpStatusText.SUCCESS,data:{session}});
 

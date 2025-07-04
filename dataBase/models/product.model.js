@@ -59,7 +59,7 @@ const productSchema = new Schema({
 
     subCategory: {
         type: Types.ObjectId,
-        ref: 'SubCategory'
+        ref: 'SubCategory'          // remove from here and add to category
     },
 
     brand: {

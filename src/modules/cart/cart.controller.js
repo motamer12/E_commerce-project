@@ -33,11 +33,11 @@ const addCart = asyncErrorHandler(
         }else{
             let item=isCartExist.cartItems.find((item)=>item.product==req.body.product)
             if(item){
-                item.quantity+=req.body.quantity
                 if(item.quantity>product.stock){
                     const error = AppError.create('this product is out of stock', 400, HttpStatusText.FAIL);
                     return next(error);
                 }
+                item.quantity+=req.body.quantity
             }
             if(!item){
                 isCartExist.cartItems.push(req.body)
@@ -73,7 +73,7 @@ const removeProductFromCart=asyncErrorHandler(async(req,res,next)=>{
         {$pull:{cartItems:{product:req.body.product}}},{new:true})
 
         if(!cart){
-            const error = AppError.create('there is no product to be deleted', 400, HttpStatusText.FAIL);
+            const error = AppError.create('there is no cart to remove product', 400, HttpStatusText.FAIL);
             return next(error);
         }
 

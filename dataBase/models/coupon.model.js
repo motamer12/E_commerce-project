@@ -12,7 +12,7 @@ const couponSchema = new Schema({
 
     expire: {
         type:Date,
-        default:Date.now()
+        default:Date.now()      //handle date.now()
     },
 
     discount: Number

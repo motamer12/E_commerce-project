@@ -17,9 +17,7 @@ const register = asyncErrorHandler(
                     status: HttpStatusText.SUCCESS,
                     data: {user, token}
                 });
-
     }
-
 );
 
 
@@ -92,7 +90,7 @@ const protectedRoute = asyncErrorHandler(
             userPayload = jwt.verify(token, process.env.JWT_SECRET_KEY);
         } catch (err) {
             const error = AppError.create('Invalid Token', 400, HttpStatusText.FAIL);
-            return next(error);
+            return next(error);                                                                  
         }
 
         const user = await User.findById(userPayload.userId);

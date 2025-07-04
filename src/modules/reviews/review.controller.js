@@ -15,7 +15,7 @@ const addReview = asyncErrorHandler(
             const error = AppError.create('You Already Reviewd This Product', 400, HttpStatusText.FAIL);
             return next(error);
         }
-    
+    // check user already bought this product
         const review = new Review(req.body);
         await review.save();
     
